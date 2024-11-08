@@ -70,13 +70,16 @@ const TeamManagement: React.FC = () => {
       title: "Action",
       key: "action",
       render: (text: any, record: any) => (
-        <>
-          {role === "owner" && (
-            <Button type="link" onClick={() => handleRemoveMember(record.id)}>
-              Remove
-            </Button>
-          )}
-        </>
+        console.log(text),
+        (
+          <>
+            {role === "owner" && (
+              <Button type="link" onClick={() => handleRemoveMember(record.id)}>
+                Remove
+              </Button>
+            )}
+          </>
+        )
       )
     }
   ];
