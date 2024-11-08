@@ -1,7 +1,6 @@
 import { useAuth } from "@workos-inc/authkit-react";
 import { Button, Flex } from "antd";
 import Title from "antd/es/typography/Title";
-import React from "react";
 
 const CreateOrg = () => {
   const { getAccessToken } = useAuth();

@@ -1,22 +1,14 @@
 import { useAuth } from "@workos-inc/authkit-react";
-import React from "react";
-import { Button, Spin, Layout, Form, Flex } from "antd";
-import { useNavigate } from "react-router-dom";
-const { Content } = Layout;
+import { Button, Form, Flex } from "antd";
 
 export function Login() {
   const {
     user,
-    getAccessToken,
-    isLoading,
+
     signIn,
     signUp,
-    signOut,
-    organizationId,
-    role,
-    permissions
+    signOut
   } = useAuth();
-  const navigate = useNavigate();
   console.log(user);
   // React.useEffect(() => {
   //   if (window.location.pathname === "/login" && !user) {
@@ -26,10 +18,10 @@ export function Login() {
   //   }
   // }, [window.location, signIn]);
 
-  const performMutation = async () => {
-    const accessToken = await getAccessToken();
-    alert(`API request with accessToken: ${accessToken}`);
-  };
+  // const performMutation = async () => {
+  //   const accessToken = await getAccessToken();
+  //   alert(`API request with accessToken: ${accessToken}`);
+  // };
 
   return (
     <Flex justify="center" align="center">

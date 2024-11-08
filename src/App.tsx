@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  BrowserRouter,
-  useNavigate
-} from "react-router-dom";
-import { Button, Flex, Layout, Spin } from "antd";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Flex, Layout, Spin } from "antd";
 import { Login } from "./pages/Login";
 import TeamManagement from "./pages/TeamManagement";
 import Todos from "./pages/Todos";
@@ -15,7 +8,6 @@ import PrivateRoute from "./Routes/PrivateRoute";
 import HeaderComponent from "./components/Header";
 import { useAuth } from "@workos-inc/authkit-react";
 import CreateOrg from "./pages/CreateOrg";
-import Title from "antd/es/typography/Title";
 const { Content, Footer } = Layout;
 
 export function App() {
@@ -24,8 +16,7 @@ export function App() {
     getAccessToken,
     isLoading,
     signIn,
-    signUp,
-    signOut,
+
     organizationId,
     role,
     permissions
@@ -92,11 +83,6 @@ export function App() {
       </Layout>
     );
   }
-
-  const performMutation = async () => {
-    const accessToken = await getAccessToken();
-    alert(`API request with accessToken: ${accessToken}`);
-  };
 
   if (user && isLoggedIn()) {
     if (!organizationId) {

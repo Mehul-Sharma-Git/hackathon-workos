@@ -18,7 +18,7 @@ const HeaderComponent: React.FC = () => {
   const [organizations, setOrganizations] = useState<
     { id: string; name: string }[]
   >([]);
-  const { signOut, user, signIn } = useAuth();
+  const { signOut, user } = useAuth();
   const [selectedOrg, setSelectedOrg] = useState<{
     id: string;
     name: string;
